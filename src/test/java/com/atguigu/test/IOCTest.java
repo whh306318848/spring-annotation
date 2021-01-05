@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * @author: wuhaohua
  * @date: Created in 2020/12/28 14:10
- * @description: TODO
+ * @description: 组件管理测试类
  */
 public class IOCTest {
     AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);

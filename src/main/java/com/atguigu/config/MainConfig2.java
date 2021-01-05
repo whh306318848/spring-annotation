@@ -14,7 +14,7 @@ import org.springframework.context.annotation.*;
 /**
  * @author: wuhaohua
  * @date: Created in 2020/12/28 16:34
- * @description: TODO
+ * @description: 组件管理
  */
 // 类中组件统一设置，满足当前条件，这个类中配置的所有bean注册才会生效
 @Conditional({WindowsCondition.class})

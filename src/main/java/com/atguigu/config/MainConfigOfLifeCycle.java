@@ -22,13 +22,15 @@ import org.springframework.context.annotation.Scope;
  *      单实例：在容器关闭的时候进行销毁
  *      多实例：容器不会管理这个bean，所以容器不会调用销毁方法
  *
- * 遍历得到所有的BeanPostProcess，挨个执行beforeInitialization，一旦方法返回null，调出for循环，不会执行后面的BeanPostProcess
- *
  * BeanPostProcess的原理
- * populateBean(beanName, mbd, instanceWrapper);给bean进行属性赋值
+ * // 给bean进行属性赋值
+ * populateBean(beanName, mbd, instanceWrapper);
  * initializeBean {
+ *     // 找到所有的BeanPostProcessor，遍历，然后执行其postProcessBeforeInitialization方法，一旦某个postProcessBeforeInitialization返回null以后，后面的BeanPostProcessor就不会被执行了，整个方法就直接返回了
  *     applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);
- *     invokeInitMethods(beanName, wrappenBean, mbd);执行自定义初始化
+ *     // 执行自定义初始化函数
+ *     invokeInitMethods(beanName, wrappenBean, mbd);
+ *     //
  *     applyBeanPostProcessAfterInitialization(wrappedBean, beanName);
  * }
  *
