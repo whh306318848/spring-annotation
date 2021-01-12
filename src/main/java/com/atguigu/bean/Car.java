@@ -2,12 +2,14 @@ package com.atguigu.bean;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Component;
 
 /**
  * @author: wuhaohua
  * @date: Created in 2020/12/29 15:48
  * @description: TODO
  */
+@Component
 public class Car implements InitializingBean, DisposableBean {
     public Car() {
         System.out.println("car constructor...");

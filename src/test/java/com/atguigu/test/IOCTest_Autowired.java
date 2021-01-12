@@ -1,5 +1,8 @@
 package com.atguigu.test;
 
+import com.atguigu.bean.Boss;
+import com.atguigu.bean.Car;
+import com.atguigu.bean.Color;
 import com.atguigu.config.MainConfigOfAutowired;
 import com.atguigu.config.MainConfigOfLifeCycle;
 import com.atguigu.dao.BookDao;
@@ -25,6 +28,15 @@ public class IOCTest_Autowired {
 
 //        BookDao bookDao = applicationContext.getBean(BookDao.class);
 //        System.out.println(bookDao);
+
+        Boss boss = applicationContext.getBean(Boss.class);
+        System.out.println(boss);
+        Car car = applicationContext.getBean(Car.class);
+        System.out.println(car);
+        Color color = applicationContext.getBean(Color.class);
+        System.out.println(color);
+
+        System.out.println(applicationContext);
 
         // 关闭容器
         applicationContext.close();
